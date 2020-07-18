@@ -23,3 +23,5 @@ jobs:
         run: cmake --build cmake-build-release
       - name: test
         run: cd cmake-build-release && ctest
+      - name: package
+        run: cmake --install cmake-build-release --prefix cmake-build-install
