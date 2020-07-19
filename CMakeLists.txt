@@ -7,5 +7,5 @@ add_compile_options(-Werror -Wall -Wextra)
 
 add_subdirectory(src)
 
-install(DIRECTORY area DESTINATION area)
-install(DIRECTORY html DESTINATION html)
+install(DIRECTORY area DESTINATION .)
+install(DIRECTORY html DESTINATION .)

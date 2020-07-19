@@ -26,7 +26,7 @@ jobs:
       - name: package
         run: cmake --install cmake-build-release --prefix cmake-build-install
       - name: tarball # TODO probably branch name here?
-        run: tar Jcvf xania-$GITHUB_RUN_ID.tar.xz --transform 's|./cmake-build-install|./xania|' cmake-build-install
+        run: tar Jcvf xania-$GITHUB_RUN_ID.tar.xz --transform "s|^cmake-build-install|./xania-$GITHUB_RUN_ID|" cmake-build-install
       - name: Upload file to bucket
         uses: zdurham/s3-upload-github-action@master
         env:
