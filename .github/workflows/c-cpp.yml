@@ -30,9 +30,9 @@ jobs:
       - name: Upload file to bucket
         uses: zdurham/s3-upload-github-action@master
         env:
-          FILE: xania-$GITHUB_RUN_ID.tar.xz
+          FILE: xania-${{ github.run_id }}.tar.xz
           AWS_REGION: 'us-east-1'
           S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          S3_KEY: releases/xania-$GITHUB_RUN_ID.tar.xz
+          S3_KEY: releases/xania-{{ github.run_id }}.tar.xz
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
